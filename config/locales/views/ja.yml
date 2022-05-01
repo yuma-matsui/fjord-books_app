@@ -1,0 +1,8 @@
+ja:
+  books:
+    index:
+      title: 書籍一覧
+    new:
+      title: 書籍の登録
+    edit:
+      title: 書籍の編集

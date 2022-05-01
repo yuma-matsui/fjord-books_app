@@ -1,0 +1,17 @@
+ja:
+  book:
+    title: 書籍名
+    memo: 概要
+    author: 著者
+    picture: 写真
+  helpers:
+    submit:
+      create: 登録する
+      update: 更新する
+      submit: 保存する
+  actions:
+    new: 書籍の登録
+    show: 詳細
+    edit: 編集
+    destroy: 削除
+    back: 戻る
