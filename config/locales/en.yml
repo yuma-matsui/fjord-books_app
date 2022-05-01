@@ -4,9 +4,11 @@ en:
       create: Create book
       update: Update book
       submit: Submit
-  actions:
+  views:
+    common:
+      back: Back
+  controllers:
     new: New Book
     show: Show
     edit: Edit
     destroy: Destroy
-    back: Back

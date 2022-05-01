@@ -20,9 +20,9 @@
         <td><%= book.memo %></td>
         <td><%= book.author %></td>
         <td><%= book.picture %></td>
-        <td><%= link_to "#{t('actions.show')}", book %></td>
-        <td><%= link_to "#{t('actions.edit')}", edit_book_path(book) %></td>
-        <td><%= link_to "#{t('actions.destroy')}", book, method: :delete, data: { confirm: "#{t('.confirmation')}" } %></td>
+        <td><%= link_to "#{t('controllers.show')}", book %></td>
+        <td><%= link_to "#{t('controllers.edit')}", edit_book_path(book) %></td>
+        <td><%= link_to "#{t('controllers.destroy')}", book, method: :delete, data: { confirm: "#{t('.delete_confirmation')}" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to "#{t('actions.new')}", new_book_path %>
+<%= link_to "#{t('controllers.new')}", new_book_path %>
