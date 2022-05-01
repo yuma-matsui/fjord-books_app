@@ -2,7 +2,14 @@ en:
   books:
     index:
       title: Books
+      confirmation: Are you sure?
     new:
       title: New Book
     edit:
       title: Edit Book
+    create:
+      notice: "%{title} was successfully created."
+    destroy:
+      notice: "%{title} was successfully destroyed."
+    update:
+      notice: "%{title} was successfully updated."
