@@ -1,9 +1,4 @@
 en:
-  book:
-    title: Title
-    memo: Memo
-    author: Author
-    picture: Picture
   helpers:
     submit:
       create: Create book
