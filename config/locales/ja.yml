@@ -215,6 +215,11 @@ ja:
       delete_confirm: よろしいですか？
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
+    pagination:
+      first: "&lsaquo;&lsaquo; 最初へ"
+      last: "最後へ &rsaquo;&rsaquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
