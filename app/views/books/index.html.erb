@@ -30,10 +30,13 @@
 
 <%= paginate @books %>
 
-<br>
-
-<%= link_to t('views.common.new'), new_book_path %>
-
-<br>
-
-<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<%# Todo i18n %>
+<footer>
+  <nav>
+    <ul>
+      <li><%= link_to t('views.common.new'), new_book_path %></li>
+      <li><%= link_to 'ユーザー一覧', users_path %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    </ul>
+  </nav>
+</footer>
