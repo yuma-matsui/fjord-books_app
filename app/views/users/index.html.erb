@@ -1,0 +1,35 @@
+<%# Todo i18n対応 %>
+<h1>Users</h1>
+
+<%# Todo i18n対応 %>
+<table>
+  <thead>
+    <tr>
+      <th>ユーザー名</th>
+      <th>自己紹介</th>
+      <th>メールアドレス</th>
+      <th>郵便番号</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.introduction %></td>
+        <td><%= user.email %></td>
+        <td><%= user.postal_code %></td>
+        <td><%= link_to t('views.common.show'), user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @users %>
+
+<br>
+
+<%= link_to 'トップページへ戻る', books_path %>
+
+<br>
