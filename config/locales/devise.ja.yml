@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: ユーザー名
+        introduction: 自己紹介
+        postal_code: 郵便番号
+        address: 住所
+        prefecture: 都道府県
+        city: 市
+        ward: 区
+        town: 町名
+        address_number: 丁目・番地・号
+        building_name: 建物名
+  registrations:
+    edit:
+      title: 登録情報の変更
