@@ -59,5 +59,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'carrierwave'
 gem 'devise'
 gem 'devise-i18n'
+gem 'image_processing', '>= 1.2'
 gem 'kaminari'
 gem 'net-smtp'
