@@ -1,25 +1,21 @@
-<%# Todo i18n %>
-<h1>User</h1>
-
-<%# Todo i18n %>
 <div class="user-main-container">
   <p>
-    <strong>ユーザー名</strong>
+    <strong><%= User.human_attribute_name(:name) %></strong>
     <%= @user.name %>
   </p>
 
   <p>
-    <strong>メールアドレス</strong>
+    <strong><%= User.human_attribute_name(:email) %></strong>
     <%= @user.email %>
   </p>
 
   <p>
-    <strong>郵便番号</strong>
+    <strong><%= User.human_attribute_name(:postal_code) %></strong>
     <%= @user.postal_code %>
   </p>
 
   <p>
-    <strong>住所</strong>
+    <strong><%= User.human_attribute_name(:address) %></strong>
     <span>
       <%= @user.prefecture %> <%= @user.city %> <%= @user.ward %> <%= @user.town %><br>
       <%= @user.address_number %> <%= @user.building_name %>
@@ -27,7 +23,7 @@
   </p>
 
   <p>
-    <strong>自己紹介</strong>
+    <strong><%= User.human_attribute_name(:introduction) %></strong>
     <%= @user.introduction %>
   </p>
 </div>
