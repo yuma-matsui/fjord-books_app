@@ -20,5 +20,6 @@
 
 <div class="field">
   <%= f.label :image %>
-  <%= f.file_field :image %>
+  <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %><br>
+  <%= image_tag @user.thumbnail if @user.image.attached? %>
 </div>
