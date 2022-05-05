@@ -47,3 +47,60 @@ $ git clone https://github.com/自分のアカウント名/fjord-books_app.git
 9. 合格したら上記Pull Requestをマージしてください（ `02-i18n` へのマージのみ。 `main` へのマージは不要です）
 
 「kaminari を使ってページング処理を実装する」以降のプラクティスでは、ブランチ名（ `02-i18n` ）の部分だけを置き換えて、同じ手順で作業してください。
+
+# テーブル設計
+
+## Users
+
+| Column             | Type   | Options            |
+| ------------------ | ------ | ------------------ |
+| name               | string | NOT NULL           |
+| email              | string | NOT NULL, 一意制約 |
+| encrypted_password | string | NOT NULL           |
+
+* Association
+- has_many :active_following, class_name: following_follower,
+                              foreign_key: follower_id,
+                              dependent_destroy
+- has_many :following, through: :active_following, source: :followed
+
+- has_many :passive_following, class_name: following_follower,
+                               foreign_key: :follower_id,
+                               dependent_destroy
+- has_many :followers, through: :passive_following, source: :follower
+
+## FollowingFollowers
+
+| Column      | Type    | Options            |
+| ----------- | ------- | ------------------ |
+| followed_id | integer | NOT NULL           |
+| follower_id | integer | NOT NULL           |
+
+* [:followed_id, :follower_id] 複合キーに一意制約
+
+* Association
+- belongs_to :follower, class_name: User
+- belongs_to :followed, class_name: User
+
+# URL設計
+
+| Method | Path                 | Description          | 
+| ------ | -------------------- | -------------------- |
+| POST   | /following-followers | フォローする         |
+| DELETE | /following-followers | アンフォローする     |
+| GET    | /users/:id/following | フォロー一覧を表示   |
+| GET    | /users/:id/follower  | フォロワー一覧を表示 | 
+
+# ルーティング(想定)
+
+```ruby
+Rails.application.routes.draw do
+  resources :users, only: %i(index show) do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :following_followers, only: [:create, :destroy]
+end
+```
+* POST or DELETE following_followersはリクエストボディにユーザーidを持たせる想定
