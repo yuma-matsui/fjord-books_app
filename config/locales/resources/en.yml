@@ -1,0 +1,16 @@
+en:
+  books:
+    index:
+      title: Books
+      delete_confirmation: Are you sure?
+    new:
+      title: New Book
+    create:
+      notice: "%{title} was successfully created."
+    edit:
+      title: Edit Book
+    update:
+      notice: "%{title} was successfully updated."
+    destroy:
+      notice: "%{title} was successfully destroyed."
+      

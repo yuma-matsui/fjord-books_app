@@ -1,0 +1,14 @@
+ja:
+  helpers:
+    submit:
+      create: 登録する
+      update: 更新する
+      submit: 保存する
+  views:
+    common:
+      back: 戻る
+  controllers:
+    new: 登録
+    show: 詳細
+    edit: 編集
+    destroy: 削除

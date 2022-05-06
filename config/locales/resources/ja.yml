@@ -1,0 +1,15 @@
+ja:
+  books:
+    index:
+      title: 書籍一覧
+      delete_confirmation: 本当に削除してもよろしいですか?
+    new:
+      title: 書籍の登録
+    create:
+      notice: "%{title}は正しく登録されました。"
+    edit:
+      title: 書籍の編集
+    update:
+      notice: "%{title}は正しく更新されました。"
+    destroy:
+      notice: "%{title}は正しく削除されました。"
