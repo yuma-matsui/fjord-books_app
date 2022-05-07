@@ -13,7 +13,6 @@
         <th><%= User.human_attribute_name(:postal_code) %></th>
         <th><%= User.human_attribute_name(:address) %></th>
         <th></th>
-        <th></th>
       </tr>
     </thead>
 
@@ -30,12 +29,10 @@
           <td><%= user.postal_code %></td>
           <td><%= user.address %></td>
           <td><%= link_to t('views.common.show'), user %></td>
-          <td><%= render 'follow_button', user: user %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-
   <%= paginate users %>
   
 <% end %>

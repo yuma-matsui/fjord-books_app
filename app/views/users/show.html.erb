@@ -18,6 +18,10 @@
   </table>
 </div>
 
+<% unless current_user?(@user) %>
+  <%= render 'follow_button', user: @user %>
+<% end %>
+
 <p>
   <strong><%= User.human_attribute_name(:email) %>:</strong>
   <%= @user.email %>
