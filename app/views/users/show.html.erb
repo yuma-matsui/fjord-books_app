@@ -12,7 +12,9 @@
     <tbody>
       <tr>
         <td><%= link_to @user.following.count, following_user_path %></td>
-        <td><%= link_to @user.followers.count, followers_user_path %></td>
+        <td>
+          <%= link_to @user.followers.count, followers_user_path, id: 'followers-count' %>
+        </td>
       </tr>
     </tbody>
   </table>

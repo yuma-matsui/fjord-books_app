@@ -1,0 +1,5 @@
+var unfollowBtn = document.getElementById("follow-button");
+var followersCountDown = document.getElementById("followers-count");
+
+unfollowBtn.innerHTML = "<%= j render('users/follow', user: @user) %>";
+followersCountDown.textContent = <%= @user.followers.count %>
