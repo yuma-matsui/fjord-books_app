@@ -11,5 +11,6 @@
 
   <body>
     <%= yield %>
+    <%= render 'shared/footer' if user_signed_in? %>
   </body>
 </html>

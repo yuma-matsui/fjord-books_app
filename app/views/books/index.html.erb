@@ -29,15 +29,3 @@
 </table>
 
 <%= paginate @books %>
-
-<%# Todo i18n %>
-<footer>
-  <nav>
-    <ul>
-      <li><%= link_to t('views.common.new'), new_book_path %></li>
-      <li><%= link_to t('controllers.users.index'), users_path %></li>
-      <li><%= link_to t('views.devise.edit'), edit_user_registration_path %></li>
-      <li><%= link_to t('views.devise.sign_out'), destroy_user_session_path, method: :delete %></li>
-    </ul>
-  </nav>
-</footer>
