@@ -1,0 +1,31 @@
+<div class="user-main-container">
+  <p>
+    <strong><%= User.human_attribute_name(:name) %></strong>
+    <%= @user.name %>
+  </p>
+
+  <p>
+    <strong><%= User.human_attribute_name(:email) %></strong>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <strong><%= User.human_attribute_name(:postal_code) %></strong>
+    <%= @user.postal_code %>
+  </p>
+
+  <p>
+    <strong><%= User.human_attribute_name(:address) %></strong>
+    <span>
+      <%= @user.prefecture %> <%= @user.city %> <%= @user.ward %> <%= @user.town %><br>
+      <%= @user.address_number %> <%= @user.building_name %>
+    </span>
+  </p>
+
+  <p>
+    <strong><%= User.human_attribute_name(:introduction) %></strong>
+    <%= @user.introduction %>
+  </p>
+</div>
+
+<%= link_to t('views.common.back'), users_path %>
