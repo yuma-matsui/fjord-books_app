@@ -17,3 +17,9 @@
   <%= f.label :self_introduction %>
   <%= f.text_area :self_introduction %>
 </div>
+
+<div class="field">
+  <%= f.label :image %>
+  <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %><br>
+  <%= image_tag @user.thumbnail if @user.image.attached? %>
+</div>
