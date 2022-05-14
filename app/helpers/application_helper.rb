@@ -6,6 +6,6 @@ module ApplicationHelper
   end
 
   def show_name_or_email(user)
-    user.name.blank? ? user.email : user.name
+    user.name.presence || user.email
   end
 end
