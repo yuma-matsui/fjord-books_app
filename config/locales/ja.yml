@@ -255,3 +255,5 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  comments:
+    button: コメントする
