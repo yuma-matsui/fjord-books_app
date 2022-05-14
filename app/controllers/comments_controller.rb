@@ -1,21 +1,33 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :find_commentable, only: %i[create destroy]
+  before_action :find_commentable, only: %i[create destroy edit update]
+  before_action :find_comment, only: %i[edit destroy update]
 
   def create
     @comment = @commentable.comments.new(comment_params)
     if @comment.save!
       redirect_to @commentable
     else
-      render_error(@commentable)
+      render_commentable(@commentable)
     end
   end
 
   def destroy
-    @comment = @commentable.comments.find(params[:id])
     @comment.destroy!
     redirect_to @commentable
+  end
+
+  def edit
+    render_commentable(@commentable)
+  end
+
+  def update
+    if @comment.update(comment_params)
+      redirect_to @commentable
+    else
+      render_commentable(@commentable)
+    end
   end
 
   private
@@ -32,7 +44,11 @@ class CommentsController < ApplicationController
     end
   end
 
-  def render_error(commentable)
+  def find_comment
+    @comment = @commentable.comments.find(params[:id])
+  end
+
+  def render_commentable(commentable)
     if commentable.instance_of?(Book)
       @book = commentable
       @comments = @book.comments
