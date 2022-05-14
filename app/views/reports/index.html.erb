@@ -17,7 +17,7 @@
         <td><%= report.title %></td>
         <td><%= report.content %></td>
         <td><%= l report.created_at %></td>
-        <td><%= report.user.name %></td>
+        <td><%= show_name_or_email(report.user) %></td>
         <td><%= link_to t('views.common.show'), report %></td>
         
         <% if allowed_user?(report.user) %>

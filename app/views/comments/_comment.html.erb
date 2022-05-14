@@ -1,5 +1,5 @@
 <tr>
-  <td><%= comment.user.name %></td>
+  <td><%= show_name_or_email(comment.user) %></td>
   <td><%= comment.text %></td>
   <td><%= l comment.updated_at %></td>
   <% if allowed_user?(comment.user) %>
