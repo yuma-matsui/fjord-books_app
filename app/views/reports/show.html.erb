@@ -20,7 +20,7 @@
   <%= @report.user.name %>
 </p>
 
-<%= render 'comments/comment_lists', comments: @comments %>
+<%= render 'comments/comment_lists', comments: @comments, commentable: @report %>
 
 <%= render 'comments/comment_form', commentable: @report, comment: @comment unless allowed_user?(@report.user) %>
 

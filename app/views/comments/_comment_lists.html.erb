@@ -1,11 +1,20 @@
-<div>
-  <strong><%= Comment.model_name.human %>:</strong>
+<div class="comment-lists">
+  <strong><%= Comment.model_name.human %></strong>
   
   <% if comments.empty? %>
     <p>コメントはありません</p>
   <% else %>
-    <div class="comment-list">
-      <%= render comments %>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th><%= Comment.human_attribute_name(:user) %></th>
+          <th><%= Comment.human_attribute_name(:text) %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render comments, commentable: commentable %>
+      </tbody>
+    </table>
   <% end %>
 </div>

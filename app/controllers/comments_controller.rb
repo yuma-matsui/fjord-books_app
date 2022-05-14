@@ -1,15 +1,21 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :find_commentable, only: [:create]
+  before_action :find_commentable, only: %i[create destroy]
 
   def create
     @comment = @commentable.comments.new(comment_params)
-    if @comment.save
+    if @comment.save!
       redirect_to @commentable
     else
       render_error(@commentable)
     end
+  end
+
+  def destroy
+    @comment = @commentable.comments.find(params[:id])
+    @comment.destroy!
+    redirect_to @commentable
   end
 
   private

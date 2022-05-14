@@ -1,4 +1,5 @@
-<dl>
-  <dt><%= comment.user.name %></dt>
-  <dd><%= comment.text %></dd>
-</dl>
+<tr>
+  <td><%= comment.user.name %></td>
+  <td><%= comment.text %></td>
+  <td><%= link_to t('views.common.destroy'), [commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
+</tr>
