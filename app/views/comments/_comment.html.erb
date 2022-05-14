@@ -1,6 +1,7 @@
 <tr>
   <td><%= comment.user.name %></td>
   <td><%= comment.text %></td>
+  <td><%= l comment.updated_at %></td>
   <% if allowed_user?(comment.user) %>
     <td><%= link_to t('views.common.edit'), edit_polymorphic_path([commentable, comment]) %></td>
     <td><%= link_to t('views.common.destroy'), [commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>

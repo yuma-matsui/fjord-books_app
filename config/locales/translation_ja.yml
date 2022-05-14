@@ -28,3 +28,4 @@ ja:
       comment:
         text: コメント
         user: 投稿者
+        updated_at: 投稿日時
