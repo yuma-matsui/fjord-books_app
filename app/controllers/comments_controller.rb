@@ -3,6 +3,7 @@
 class CommentsController < ApplicationController
   before_action :find_commentable, only: %i[create destroy edit update]
   before_action :find_comment, only: %i[edit destroy update]
+  before_action :deny_invalid_user, only: %i[destroy edit update]
 
   def create
     @comment = @commentable.comments.new(comment_params)
@@ -31,6 +32,10 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def deny_invalid_user
+    redirect_to @commentable unless current_user == @comment.user
+  end
 
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id)
