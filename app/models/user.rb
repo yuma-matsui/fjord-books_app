@@ -22,10 +22,6 @@ class User < ApplicationRecord
     following << other_user
   end
 
-  def unfollow(other_user)
-    active_following.find_by(followed_id: other_user.id).destroy!
-  end
-
   def following?(other_user)
     following.include?(other_user)
   end
