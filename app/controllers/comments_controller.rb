@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
   private
 
   def deny_invalid_user
-    redirect_to @commentable unless current_user == @comment.user
+    redirect_to @commentable if current_user != @comment.user
   end
 
   def comment_params
