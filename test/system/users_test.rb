@@ -15,11 +15,13 @@ class UsersTest < ApplicationSystemTestCase
     fill_in 'パスワード（確認用）', with: user.password_confirmation
     click_on 'アカウント登録'
     assert_text 'アカウント登録が完了しました。'
+    assert_selector 'h1', text: '本'
   end
 
   test 'visiting users page' do
     sign_in_as(@user)
     visit users_path
+    assert_selector 'h1', text: 'ユーザ'
     assert_selector 'td', text: @user.email
   end
 
@@ -33,5 +35,6 @@ class UsersTest < ApplicationSystemTestCase
     fill_in '現在のパスワード', with: @user.password
     click_on '更新'
     assert_text 'アカウント情報を変更しました。'
+    click_on '戻る'
   end
 end
