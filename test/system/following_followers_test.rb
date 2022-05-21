@@ -3,8 +3,6 @@
 require 'application_system_test_case'
 
 class FollowingFollowersTest < ApplicationSystemTestCase
-  include SignInHelper
-
   setup do
     @user = FactoryBot.create(:user)
     @other_user = FactoryBot.create(:user)

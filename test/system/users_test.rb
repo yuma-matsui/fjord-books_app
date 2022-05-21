@@ -3,8 +3,6 @@
 require 'application_system_test_case'
 
 class UsersTest < ApplicationSystemTestCase
-  include SignInHelper
-
   setup do
     @user = FactoryBot.create(:user)
   end

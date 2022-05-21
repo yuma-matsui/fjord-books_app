@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 require 'application_system_test_case'
-require 'helpers/sign_in_helper'
 
 class BooksTest < ApplicationSystemTestCase
-  include SignInHelper
-
   setup do
     @book = FactoryBot.create(:book)
     user = FactoryBot.create(:user)
