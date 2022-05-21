@@ -1,0 +1,18 @@
+/* follow-button */
+.btn {
+  border: 1px solid #000;
+  border-radius: 15px;
+  font-size: .5rem;
+  box-shadow: 2px 2px 3px 0px;
+  padding: 3px 6px;
+  &-follow {
+    background-color: #fff;
+    color: #000;
+  }
+  &-unfollow {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+/* follow-button */
