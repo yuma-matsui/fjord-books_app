@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
-  def setup
+  setup do
     @report = FactoryBot.create(:report)
     @user = FactoryBot.create(:user)
   end
