@@ -8,7 +8,7 @@ class UserTest < ActiveSupport::TestCase
     @other_user = FactoryBot.create(:user)
   end
 
-  test 'should count up Relationship when user follow some user' do
+  test 'should count up Relationship when user follows some user' do
     assert_difference 'Relationship.count', 1 do
       @user.follow(@other_user)
     end
