@@ -47,7 +47,7 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
-  test 'sould includes other user in followings when user is following other user' do
+  test 'should includes other user in followings when user is following other user' do
     @user.follow(@other_user)
     assert @user.followings.include?(@other_user)
   end
