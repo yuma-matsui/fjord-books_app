@@ -36,7 +36,7 @@ class CommentsTest < ApplicationSystemTestCase
     visit reports_path
     click_link '詳細', href: report_path(@report_comment.commentable)
     assert has_button? 'コメントする'
-    fill_in	with: @report_comment.content, id: 'comment_content'
+    fill_in with: @report_comment.content, id: 'comment_content'
     click_on 'コメントする'
     assert_text 'コメントが投稿されました。'
     assert_selector 'li', text: @report_comment.content
