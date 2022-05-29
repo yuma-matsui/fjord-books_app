@@ -18,7 +18,7 @@ class ReportsTest < ApplicationSystemTestCase
     visit reports_path
     assert has_link? '新規作成', href: new_report_path
     click_on '新規作成'
-    fill_in 'タイトル',	with: @report.title
+    fill_in 'タイトル', with: @report.title
     fill_in '内容', with: @report.content
     click_on '登録する'
     assert_text '日報が作成されました。'
