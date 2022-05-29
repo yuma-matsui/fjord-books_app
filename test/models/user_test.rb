@@ -26,9 +26,17 @@ class UserTest < ActiveSupport::TestCase
     assert @user.following?(@other_user)
   end
 
+  test "should return false when user isn't following other user" do
+    assert_not @user.following?(@other_user)
+  end
+
   test 'should return true when user is followed by other user' do
-    @user.follow(@other_user)
-    assert @other_user.followed_by?(@user)
+    @other_user.follow(@user)
+    assert @user.followed_by?(@other_user)
+  end
+
+  test "should return false when user isn't followed by other user" do
+    assert_not @user.followed_by?(@other_user)
   end
 
   test 'should return name when user has name' do
