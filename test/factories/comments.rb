@@ -3,6 +3,7 @@
 FactoryBot.define do
   factory :comment do
     content { Faker::Lorem.sentence }
+    user
 
     trait :for_book do
       association :commentable, factory: :book
@@ -11,6 +12,5 @@ FactoryBot.define do
     trait :for_report do
       association :commentable, factory: :report
     end
-    association :user
   end
 end
