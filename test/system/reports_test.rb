@@ -40,7 +40,7 @@ class ReportsTest < ApplicationSystemTestCase
   test 'destroying a report' do
     visit reports_path
     assert has_link? '削除', href: report_path(@report)
-    page.accept_confirm do
+    accept_confirm do
       click_on '削除', match: :first
     end
     assert_text '日報が削除されました。'
