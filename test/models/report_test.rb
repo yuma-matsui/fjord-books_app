@@ -9,8 +9,7 @@ class ReportTest < ActiveSupport::TestCase
   end
 
   test 'user should edit own report' do
-    user = @report.user
-    assert @report.editable?(user)
+    assert @report.editable?(@report.user)
   end
 
   test "user shouldn't edit other user's report" do
