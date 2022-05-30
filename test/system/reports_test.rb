@@ -32,7 +32,7 @@ class ReportsTest < ApplicationSystemTestCase
     assert has_link? '編集', href: edit_report_path(@report)
     click_on '編集'
     fill_in 'タイトル', with: @report.title
-    fill_in '内容',    with: @report.content
+    fill_in '内容', with: @report.content
     click_on '更新する'
     assert_text '日報が更新されました。'
   end
